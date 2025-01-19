@@ -30,7 +30,9 @@ void showStudentList() {
     }
 
     string line;
-    cout << left << setw(15) << "Roll No" << setw(20) << "Name" << setw(20) << "Father Name" << "CNIC" << endl;
+    cout << endl;
+    cout << left << setw(15) << "Roll No" << setw(20) << "| Name" << setw(20) << "  | Father Name" << setw(20) << "    | CNIC" << endl;
+    cout << "-----------------------------------------------------------------------" << endl;
     while (getline(file, line)) {
         stringstream ss(line);
         Student student;
@@ -38,7 +40,7 @@ void showStudentList() {
         getline(ss, student.name, '|');
         getline(ss, student.fatherName, '|');
         getline(ss, student.cnic, '|');
-        cout << left << setw(15) << student.rollNo << setw(20) << student.name << setw(20) << student.fatherName << student.cnic << endl;
+        cout << left << setw(15) << student.rollNo << "| " << setw(20)  << student.name << "| " << setw(20)  << student.fatherName << "| " << setw(20) << student.cnic << endl;
     }
     file.close();
 }
@@ -103,7 +105,7 @@ void showSingleStudent() {
     string rollNo;
     cout << "Enter Roll No: ";
     cin >> rollNo;
-
+    cout << endl;
     string line;
     while (getline(file, line)) {
         if (line.find(rollNo + "|") == 0) {
@@ -113,8 +115,9 @@ void showSingleStudent() {
             getline(ss, student.name, '|');
             getline(ss, student.fatherName, '|');
             getline(ss, student.cnic, '|');
-            cout << left << setw(15) << "Roll No" << setw(20) << "Name" << setw(20) << "Father Name" << "CNIC" << endl;
-            cout << left << setw(15) << student.rollNo << setw(20) << student.name << setw(20) << student.fatherName << student.cnic << endl;
+            cout << left << setw(15) << "Roll No" << setw(20) << "| Name" << setw(20) << "  | Father Name" << setw(20) << "    | CNIC" << endl;
+            cout << "-----------------------------------------------------------------------" << endl;
+            cout << left << setw(15) << student.rollNo << "| " << setw(20) << student.name << "| " << setw(20) << student.fatherName << "| " << setw(20) << student.cnic << endl;
             return;
         }
     }
@@ -130,6 +133,7 @@ void showAllRecords() {
         return;
     }
 
+    cout << endl;
     string line;
     cout << left << setw(10) << "Roll No" << setw(10) << "| Semester  ";
     for (int i = 1; i <= 5; ++i) cout << "| Subject " << i << " ";
@@ -243,7 +247,7 @@ void showSingleStudentRecords() {
         cout << "Error opening students file!\n";
         return;
     }
-
+    cout << endl;
     string studentLine;
     bool studentExists = false;
     while (getline(studentFile, studentLine)) {
@@ -255,8 +259,9 @@ void showSingleStudentRecords() {
             getline(ss, student.name, '|');
             getline(ss, student.fatherName, '|');
             getline(ss, student.cnic, '|');
-            cout << left << setw(15) << "Roll No" << setw(20) << "Name" << setw(20) << "Father Name" << "CNIC" << endl;
-            cout << left << setw(15) << student.rollNo << setw(20) << student.name << setw(20) << student.fatherName << student.cnic << endl;
+            cout << left << setw(15) << "Roll No" << setw(20) << "| Name" << setw(20) << "  | Father Name" << setw(20) << "    | CNIC" << endl;
+            cout << "-----------------------------------------------------------------------" << endl;
+            cout << left << setw(15) << student.rollNo << "| " << setw(20) << student.name << "| " << setw(20) << student.fatherName << "| " << setw(20) << student.cnic << endl;
             break;
         }
     }
@@ -271,7 +276,7 @@ void showSingleStudentRecords() {
         cout << "Error opening records file!\n";
         return;
     }
-
+    cout << endl;
     string recordLine;
     cout << left << setw(10) << "Roll No" << setw(10) << "| Semester  ";
     for (int i = 1; i <= 5; ++i) cout << "| Subject " << i << " ";
@@ -307,7 +312,7 @@ int main() {
         cout << "d. Show all records\n";
         cout << "e. Add record\n";
         cout << "f. Show single student records\n";
-        cout << "g. Exit\n";
+        cout << "g. Exit\n\n";
         cout << "Enter your choice: ";
 
         char choice;

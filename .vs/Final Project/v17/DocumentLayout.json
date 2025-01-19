@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "F:\\Uni Content\\Semester 1\\Programming Fundamental\\final project\\c-console-app-student-portal\\",
+  "WorkspaceRootPath": "C:\\Users\\minhaj\\Desktop\\Univerty\\prog-proj-b\\c-console-app-student-portal\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9013119B-AA1F-4A45-AB4A-8F6F785C59F5}|Final Project\\Final Project.vcxproj|F:\\Uni Content\\Semester 1\\Programming Fundamental\\final project\\c-console-app-student-portal\\Final Project\\Final Project.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{9013119B-AA1F-4A45-AB4A-8F6F785C59F5}|Final Project\\Final Project.vcxproj|C:\\Users\\minhaj\\Desktop\\Univerty\\prog-proj-b\\c-console-app-student-portal\\Final Project\\Final Project.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{9013119B-AA1F-4A45-AB4A-8F6F785C59F5}|Final Project\\Final Project.vcxproj|solutionrelative:Final Project\\Final Project.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -20,11 +20,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Final Project.cpp",
-              "DocumentMoniker": "F:\\Uni Content\\Semester 1\\Programming Fundamental\\final project\\c-console-app-student-portal\\Final Project\\Final Project.cpp",
+              "DocumentMoniker": "C:\\Users\\minhaj\\Desktop\\Univerty\\prog-proj-b\\c-console-app-student-portal\\Final Project\\Final Project.cpp",
               "RelativeDocumentMoniker": "Final Project\\Final Project.cpp",
-              "ToolTip": "F:\\Uni Content\\Semester 1\\Programming Fundamental\\final project\\c-console-app-student-portal\\Final Project\\Final Project.cpp",
+              "ToolTip": "C:\\Users\\minhaj\\Desktop\\Univerty\\prog-proj-b\\c-console-app-student-portal\\Final Project\\Final Project.cpp",
               "RelativeToolTip": "Final Project\\Final Project.cpp",
-              "ViewState": "AgIAAMYAAAAAAAAAAAAAAN4AAABHAAAAAAAAAA==",
+              "ViewState": "AgIAABQBAAAAAAAAAAAAACQBAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-01-19T00:34:46.752Z",
               "IsPinned": true,
