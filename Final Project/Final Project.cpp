@@ -22,6 +22,20 @@ struct Record {
 
 vector<string> dummyCourses = { "Math", "Physics", "Chemistry", "English", "Programming" };
 
+float getSubjectGPA(int marks) {
+    if (marks > 85) { return 4.00; }
+    else if (marks >= 80) { return 3.66; }
+    else if (marks >= 75) { return 3.33; }
+    else if (marks >= 70) { return 3.00; }
+    else if (marks >= 67) { return 2.66; }
+    else if (marks >= 63) { return 2.33; }
+    else if (marks >= 60) { return 2.00; }
+    else if (marks >= 57) { return 1.66; }
+    else if (marks >= 54) { return 1.30; }
+    else if (marks >= 50) { return 1.00; }
+    else { return 0.0; }
+}
+
 void showStudentList() {
     ifstream file("students.txt");
     if (!file.is_open()) {
@@ -229,7 +243,12 @@ void addRecord() {
     }
 
     record.total = record.subject1 + record.subject2 + record.subject3 + record.subject4 + record.subject5;
-    record.gpa = (float)record.total / 500 * 4;
+    float subject1GPA = getSubjectGPA(record.subject1);
+    float subject2GPA = getSubjectGPA(record.subject2);
+    float subject3GPA = getSubjectGPA(record.subject3);
+    float subject4GPA = getSubjectGPA(record.subject4);
+    float subject5GPA = getSubjectGPA(record.subject5);
+    record.gpa = (subject1GPA + subject2GPA + subject3GPA + subject4GPA + subject5GPA)/5;
 
     file << record.rollNo << " " << record.semester << " " << record.subject1 << " " << record.subject2 << " "
         << record.subject3 << " " << record.subject4 << " " << record.subject5 << " " << record.total << " " << record.gpa << "\n";
