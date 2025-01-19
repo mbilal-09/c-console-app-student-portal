@@ -302,6 +302,51 @@ void showSingleStudentRecords() {
     }
 }
 
+void showSingleSemesterRecords() {
+    int semester;
+    cout << "Enter semester: ";
+    cin >> semester;
+
+    ifstream studentFile("students.txt");
+    if (!studentFile.is_open()) {
+        cout << "Error opening students file!\n";
+        return;
+    }
+    cout << endl;
+    
+
+
+    ifstream recordFile("records.txt");
+    if (!recordFile.is_open()) {
+        cout << "Error opening records file!\n";
+        return;
+    }
+    cout << endl;
+    string recordLine;
+    cout << left << setw(10) << "Semester" << setw(10) << "| Roll No   ";
+    for (int i = 1; i <= 5; ++i) cout << "| Subject " << i << " ";
+    cout << "| Total" << setw(10) << "     | GPA" << endl;
+    cout << "------------------------------------------------------------------------------------------------------" << endl;
+    bool hasRecords = false;
+    while (getline(recordFile, recordLine)) {
+        stringstream ss(recordLine);
+        Record record;
+        ss >> record.rollNo >> record.semester >> record.subject1 >> record.subject2 >> record.subject3 >> record.subject4 >> record.subject5 >> record.total >> record.gpa;
+        if (record.semester == semester) {
+            hasRecords = true;
+            cout << left << setw(10) << record.semester << "| " << setw(10) << record.rollNo << "| "
+                << setw(10) << record.subject1 << "| " << setw(10) << record.subject2 << "| "
+                << setw(10) << record.subject3 << "| " << setw(10) << record.subject4 << "| "
+                << setw(10) << record.subject5 << "| " << setw(10) << record.total << "| "
+                << setw(10) << record.gpa << endl;
+        }
+    }
+
+    if (!hasRecords) {
+        cout << "No records found for this student!\n";
+    }
+}
+
 int main() {
     while (true) {
         cout << endl;
@@ -312,7 +357,8 @@ int main() {
         cout << "d. Show all records\n";
         cout << "e. Add record\n";
         cout << "f. Show single student records\n";
-        cout << "g. Exit\n\n";
+        cout << "g. Show result by semester\n";
+        cout << "h. Exit\n\n";
         cout << "Enter your choice: ";
 
         char choice;
@@ -338,6 +384,9 @@ int main() {
             showSingleStudentRecords();
             break;
         case 'g':
+            showSingleSemesterRecords();
+            break;
+        case 'h':
             cout << "Exiting the program. Goodbye!\n";
             return 0;
         default:
