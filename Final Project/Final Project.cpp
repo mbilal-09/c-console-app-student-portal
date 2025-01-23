@@ -22,6 +22,65 @@ struct Record {
 
 vector<string> dummyCourses = { "Math", "Physics", "Chemistry", "English", "Programming" };
 
+float getSubjectGPA(int marks);
+void showStudentList();
+void addStudent();
+void showSingleStudent();
+void showAllRecords();
+void addRecord();
+void showSingleStudentRecords();
+void showSingleSemesterRecords();
+
+int main() {
+    while (true) {
+        cout << endl;
+        cout << "\nStudent Management System\n";
+        cout << "a. Show Student list\n";
+        cout << "b. Add Student\n";
+        cout << "c. Show single student\n";
+        cout << "d. Show all records\n";
+        cout << "e. Add record\n";
+        cout << "f. Show single student records\n";
+        cout << "g. Show result by semester\n";
+        cout << "h. Exit\n\n";
+        cout << "Enter your choice: ";
+
+        char choice;
+        cin >> choice;
+
+        switch (choice) {
+        case 'a':
+            showStudentList();
+            break;
+        case 'b':
+            addStudent();
+            break;
+        case 'c':
+            showSingleStudent();
+            break;
+        case 'd':
+            showAllRecords();
+            break;
+        case 'e':
+            addRecord();
+            break;
+        case 'f':
+            showSingleStudentRecords();
+            break;
+        case 'g':
+            showSingleSemesterRecords();
+            break;
+        case 'h':
+            cout << "Exiting the program. Goodbye!\n";
+            return 0;
+        default:
+            cout << "Invalid choice. Please try again.\n";
+            break;
+        }
+    }
+    return 0;
+}
+
 float getSubjectGPA(int marks) {
     if (marks > 85) { return 4.00; }
     else if (marks >= 80) { return 3.66; }
@@ -366,52 +425,3 @@ void showSingleSemesterRecords() {
     }
 }
 
-int main() {
-    while (true) {
-        cout << endl;
-        cout << "\nStudent Management System\n";
-        cout << "a. Show Student list\n";
-        cout << "b. Add Student\n";
-        cout << "c. Show single student\n";
-        cout << "d. Show all records\n";
-        cout << "e. Add record\n";
-        cout << "f. Show single student records\n";
-        cout << "g. Show result by semester\n";
-        cout << "h. Exit\n\n";
-        cout << "Enter your choice: ";
-
-        char choice;
-        cin >> choice;
-
-        switch (choice) {
-        case 'a':
-            showStudentList();
-            break;
-        case 'b':
-            addStudent();
-            break;
-        case 'c':
-            showSingleStudent();
-            break;
-        case 'd':
-            showAllRecords();
-            break;
-        case 'e':
-            addRecord();
-            break;
-        case 'f':
-            showSingleStudentRecords();
-            break;
-        case 'g':
-            showSingleSemesterRecords();
-            break;
-        case 'h':
-            cout << "Exiting the program. Goodbye!\n";
-            return 0;
-        default:
-            cout << "Invalid choice. Please try again.\n";
-            break;
-        }
-    }
-    return 0;
-}
